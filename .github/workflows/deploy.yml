@@ -54,6 +54,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: ️☕️ Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
       - name: 🧪 테스트 코드 빌드 & 실행
         run: ./gradlew test
         working-directory: ./  # 필요시 경로 수정
