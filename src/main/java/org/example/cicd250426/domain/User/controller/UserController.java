@@ -9,6 +9,6 @@ public class UserController {
     // 루트 경로 (GET /)
     @GetMapping("/")
     public String home() {
-        return "Hello from UserController!";
+        return "Hello from UserControllerqwe!";
     }
 }
