@@ -1,4 +1,4 @@
-package domain.entity;
+package org.example.cicd250426.domain.User.entity;
 
 
 import jakarta.persistence.GeneratedValue;

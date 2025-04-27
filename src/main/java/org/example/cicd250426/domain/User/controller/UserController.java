@@ -1,4 +1,4 @@
-package Controller;
+package org.example.cicd250426.domain.User.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
