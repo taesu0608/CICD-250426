@@ -48,6 +48,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: ☕️ Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: 🧪 테스트 코드 빌드 & 실행
+        run: ./gradlew test
+        working-directory: ./  # 필요시 경로 수정
+        shell: bash
+
       - name: application-secret.yml 생성
         env:
           APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET }}
@@ -81,6 +92,7 @@ jobs:
           tags: |
             ghcr.io/${{ steps.export_owner.outputs.owner_lc }}/${{ steps.export_image.outputs.image_name }}:${{ needs.makeTagAndRelease.outputs.tag_name }},
             ghcr.io/${{ steps.export_owner.outputs.owner_lc }}/${{ steps.export_image.outputs.image_name }}:latest
+  
 
   deploy:
     runs-on: ubuntu-latest
